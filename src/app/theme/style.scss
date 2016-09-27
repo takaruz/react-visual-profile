@@ -1,0 +1,23 @@
+.avartarStyle {
+  margin-top: 20px;
+  padding: 2px;
+}
+
+.margin20 {
+  margin: 12px;
+}
+
+.paperStyle {
+  padding: 10px 20px 10px 20px;
+  text-align: left;
+}
+
+.header {
+  text-align: center;
+}
+
+@media screen and (min-width: 640px) {
+    .headerContainer {
+      margin-left: 256px;
+    }
+}
