@@ -3,9 +3,10 @@ import Chip from 'material-ui/Chip';
 import {lightBlue100} from 'material-ui/styles/colors';
 
 export default class SkillChip extends Component {
-
+  
   constructor(props) {
     super(props);
+    
     this.state = {chipData: [
       {key: 0, label: 'ReactJS'},
       {key: 1, label: 'JQuery'},

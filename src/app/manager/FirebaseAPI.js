@@ -1,11 +1,6 @@
-
 import FirebaseAPI from 'firebase'
+import { FIREBASE_CONFIG } from '../constants/configs'
 
-
-var config = {
-  apiKey: "AIzaSyDLxs12kFvRRKx8NYLfMaS3rnTF3gS4Jgg",
-  databaseURL: "https://profile-ibirdz.firebaseio.com",
-}
-FirebaseAPI.initializeApp(config)
+FirebaseAPI.initializeApp(FIREBASE_CONFIG)
 
 export default FirebaseAPI

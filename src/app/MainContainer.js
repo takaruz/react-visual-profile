@@ -18,12 +18,13 @@ import {
 import {styles, muiTheme} from './theme/style'
 import style from './theme/style.scss'
 
-import {Avatar, SkillChipComp} from './components'
+import {AppBarComp, Avatar, SkillChip} from './components'
 
-// import FirebaseAPI from './manager/FirebaseAPI'
-// FirebaseAPI.database().ref('profile/skills').once('value').then(function(snapshot) {
-//   console.log(snapshot.val());
-// })
+import FirebaseAPI from './manager/FirebaseAPI'
+
+FirebaseAPI.database().ref('profile/skills').once('value').then(function(snapshot) {
+  console.log(snapshot.val());
+})
 
 class Main extends Component {
   constructor(props, context) {
@@ -52,7 +53,7 @@ class Main extends Component {
   }
   
   componentDidMount() {
-    this.handleResize();
+    this.handleResize()
     window.addEventListener('resize', this.handleResize);
   }
 
@@ -91,23 +92,21 @@ class Main extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          <div>
-            <Drawer 
-              open={this.state.drawer}
-            >
-              <AppBar 
-                title="Menu"
-                showMenuIconButton={false} />
-              <MenuItem 
-                onTouchTap={this.handleRequestClose.bind(this, 'drawer')}>
-                Visual Profile
-              </MenuItem>
-              <MenuItem 
-                onTouchTap={this.handleRequestClose.bind(this, 'drawer')}>
-                Have One?
-              </MenuItem>
-            </Drawer>
-          </div>
+          <Drawer 
+            open={this.state.drawer}
+          >
+            <AppBar 
+              title="Menu"
+              showMenuIconButton={false} />
+            <MenuItem 
+              onTouchTap={this.handleRequestClose.bind(this, 'drawer')}>
+              Menu Item
+            </MenuItem>
+            <MenuItem 
+              onTouchTap={this.handleRequestClose.bind(this, 'drawer')}>
+              Menu Item 2
+            </MenuItem>
+          </Drawer>
           <AppBar
             style={{position:'fixed'}}
             title="My Profile"
@@ -159,7 +158,7 @@ class Main extends Component {
               <Divider />
               <div className={style['paperStyle']} >
                 <h1 className={style['header']}>Skills</h1>
-                <SkillChipComp />
+                <SkillChip />
               </div>
               <Divider />
                 <div className={style['paperStyle']} >

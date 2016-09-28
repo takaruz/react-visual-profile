@@ -12,7 +12,7 @@ export default class AvatarIcon extends Component {
     
     return (
       <Avatar
-        className={styles['avartarStyle']}
+        className={styles['avatarStyle']}
         src={this.props.imageSrc}
         size={150}
       />
